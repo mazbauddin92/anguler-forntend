@@ -1,0 +1,25 @@
+<div class="card col-md-8 offset-md-2 offset-md-2">
+    <h3>All Employee</h3>
+    <!-- <a href="http://localhost:4200/addemployee">Add Employee</a> -->
+    <a routerLink="/addemployee">Add Employee</a>
+    <table class="table">
+        <thead>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Gender</th>
+            <th>Department</th>
+            <th>City</th>
+            <th>Action</th>
+        </thead>
+        <tbody>
+            <tr *ngFor='let item of employees'>
+                <td>{{item.id}}</td>
+                <td>{{item.name}}</td>
+                <td>{{item.gender}}</td>
+                <td>{{item.department}}</td>
+                <td>{{item.city}}</td>
+                <td><a routerLink='/updateemployee/{{item.id}}'><i >Edit</i></a> | <i (click)='deleteEmployee(item.id)'>Delete</i></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
